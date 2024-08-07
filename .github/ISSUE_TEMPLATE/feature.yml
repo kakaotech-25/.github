@@ -25,7 +25,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: detail-work
+    id: references
     attributes:
       label: 📄 참고자료
       placeholder: ex) URL
