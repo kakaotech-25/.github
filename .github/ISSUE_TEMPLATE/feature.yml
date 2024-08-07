@@ -24,16 +24,16 @@ body:
         - [ ] 3.
     validations:
       required: true
-  - type: textarea
-    id: references
-    attributes:
-      label: 📄 참고자료
-      placeholder: ex) URL
-    validations:
-      required: true
   - type: input
     id: time
     attributes:
       label: ⏰ 예상소요시간
     validations:
       required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: 📄 참고자료
+      placeholder: ex) URL
+    validations:
+      required: false
