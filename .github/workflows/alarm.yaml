@@ -5,7 +5,7 @@ name: Daily Discord Todo Message
 on:
   schedule:
     # - cron: "0 0 * * *" # +9:00 KST
-    - cron: "*/1 * * * *" # test
+    - cron: "*/5 * * * *" # test
 
 jobs:
   post-discord-message:
