@@ -1,0 +1,27 @@
+# .github/workflows/discord-daily-todo.yml
+
+name: Daily Discord Todo Message
+
+on:
+  schedule:
+    # - cron: "0 0 * * *" # +9:00 KST
+    - cron: "*/1 * * * *" # test
+
+jobs:
+  post-discord-message:
+    name: Post Daily Todo Message
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Send a message to Discord
+      - name: Send Discord Message with Date
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          DATE=$(date '+%m/%d(%a)')
+          curl -X POST \
+            -H "Content-Type: application/json" \
+            -d "{
+                  \"content\": \"👍 $DATE 오늘의 할 일! @everyone\n해당 메시지 스레드로 오늘 할 일을 12시까지 작성해주세요!\"
+                }" \
+            $DISCORD_WEBHOOK_URL
